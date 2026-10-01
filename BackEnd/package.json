@@ -1,0 +1,14 @@
+{
+  "name": "cloudTechno-backend",
+  "version": "1.0.0",
+  "description": "CloudTechno 3 Tier Application Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}
