@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                echo 'Checking out source code from GitHub'
+            }
+        }
+
+        stage('Verify Workspace') {
+            steps {
+                echo 'Checking workspace files'
+                sh 'pwd'
+                sh 'ls -la'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the application'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing the application'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                echo 'Building Docker image'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the 3-Tier application'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '3-Tier Application CI/CD completed successfully'
+        }
+
+        failure {
+            echo '3-Tier Application CI/CD failed'
+        }
+    }
+}
